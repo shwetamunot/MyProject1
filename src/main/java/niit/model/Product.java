@@ -1,23 +1,33 @@
 package niit.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
-
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table
-public class Product implements Serializable{
-@Id
-int pId,stock,price,cId;
-String pName,pDesc;
-public int getpId() {
-	return pId;
+public class Product {
+	@Id
+int proId;
+String proName,proDesc;
+int stock,price,cId;
+public int getProId() {
+	return proId;
 }
-public void setpId(int pId) {
-	this.pId = pId;
+public void setProId(int proId) {
+	this.proId = proId;
+}
+public String getProName() {
+	return proName;
+}
+public void setProName(String proName) {
+	this.proName = proName;
+}
+public String getProDesc() {
+	return proDesc;
+}
+public void setProDesc(String proDesc) {
+	this.proDesc = proDesc;
 }
 public int getStock() {
 	return stock;
@@ -36,18 +46,6 @@ public int getcId() {
 }
 public void setcId(int cId) {
 	this.cId = cId;
-}
-public String getpName() {
-	return pName;
-}
-public void setpName(String pName) {
-	this.pName = pName;
-}
-public String getpDesc() {
-	return pDesc;
-}
-public void setpDesc(String pDesc) {
-	this.pDesc = pDesc;
 }
 
 }

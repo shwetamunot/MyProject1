@@ -58,13 +58,13 @@ public class CategoryDaoImpl implements CategoryDao {
 		return false;
 	}
 }
+	
 	public Category getCategory(int cId) {
 	Session session=sessionfactory.openSession();
 	Category category=(Category)session.get(Category.class,cId);
 		session.close();
 		return category;
 	}
-
 	@Transactional
 
 	public boolean UpdateCategory(Category category) {

@@ -57,7 +57,7 @@ public void UpdateCategoryTest()
 	assertTrue(categoryDao.UpdateCategory(category));
 }
 
-@Ignore
+
 @Test
 public void DeleteCategoryTest()
 {
@@ -77,7 +77,7 @@ public void retrieveCategoryTest()
 	this.show(listCategory);
 }
 
-
+@Ignore
 public void show(List<Category> listCategory)
 {
 	for(Category category:listCategory)

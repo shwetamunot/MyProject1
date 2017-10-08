@@ -14,9 +14,17 @@ import org.springframework.stereotype.Component;
 public class User implements Serializable{
 	private static final long serialVersionUID=1L;
 			@Id
+			int useId;
 			private String email;
 	        private String name;
-	      public String getEmail() {
+	        
+	      public int getUseId() {
+				return useId;
+			}
+			public void setUseId(int useId) {
+				this.useId = useId;
+			}
+		public String getEmail() {
 				return email;
 			}
 			public void setEmail(String email) {
@@ -28,10 +36,10 @@ public class User implements Serializable{
 			public void setName(String name) {
 				this.name = name;
 			}
-			public String getPhno() {
+			public int getPhno() {
 				return Phno;
 			}
-			public void setPhno(String phno) {
+			public void setPhno(int phno) {
 				Phno = phno;
 			}
 			public String getAddress() {
@@ -52,9 +60,9 @@ public class User implements Serializable{
 			public void setCountry(String country) {
 				this.country = country;
 			}
-			private String Phno;
+			private int Phno;
 	        private String address;	
 	        private String role;
 	        private String country;
-	        private boolean enabled;
+	       
 }

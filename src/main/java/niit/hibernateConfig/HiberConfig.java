@@ -14,6 +14,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import niit.Dao.UserDao;
 import niit.DaoImpl.*;
@@ -30,7 +31,6 @@ public  class HiberConfig
 public DataSource getH2DataSource()
 {
 	 System.out.println("Hibernate initiated..");
-	 
 	 DriverManagerDataSource dm=new DriverManagerDataSource();
 	 dm.setDriverClassName("org.h2.Driver");
 	 dm.setUrl("jdbc:h2:tcp://localhost/~/mt");
@@ -55,20 +55,20 @@ public DataSource getH2DataSource()
 	 LocalSessionFactoryBuilder lsfb=new LocalSessionFactoryBuilder(getH2DataSource());
 	 lsfb.addProperties(getHiberProps());
 	 lsfb.addAnnotatedClass(User.class);
-	 lsfb.addAnnotatedClass(Category.class);
-	 lsfb.addAnnotatedClass(Product.class);
+	 //lsfb.addAnnotatedClass(Category.class);
+	// lsfb.addAnnotatedClass(Product.class);
+    // lsfb.addAnnotatedClass(Supplier.class);
 	 return lsfb.buildSessionFactory();
 }
-
+/*
  @Autowired
  @Bean(name="UserDaoImpl")
  public UserDao getUserDao(SessionFactory sessionfac)
  {
-	 
-	return new UserDaoImpl(sessionfac);	 
+	 return new UserDaoImpl(sessionfac);	 
  }
 
-
+*/
  
  @Autowired
  @Bean(name="transactionManager")
@@ -77,10 +77,9 @@ public HibernateTransactionManager getTransaction(SessionFactory sessionfactory)
 	 HibernateTransactionManager tm=new HibernateTransactionManager(sessionfactory);
 			 return tm;			 
 }
- /*
-     public static void main(String args[])
+ /*    public static void main(String args[])
  {
 	 new HiberConfig().getSession();
- }*/
-
+ }
+*/
 }

@@ -1,0 +1,14 @@
+niit\DaoImpl\CategoryDaoImpl.class
+niit\Kidbackend\App.class
+niit\model\Supplier.class
+niit\Dao\ProductDao.class
+niit\model\User.class
+niit\DaoImpl\UserDaoImpl.class
+niit\model\Category.class
+niit\hibernateConfig\HiberConfig.class
+niit\DaoImpl\SupplierDaoImpl.class
+niit\DaoImpl\ProductDaoImpl.class
+niit\Dao\CategoryDao.class
+niit\Dao\UserDao.class
+niit\model\Product.class
+niit\Dao\SupplierDao.class
